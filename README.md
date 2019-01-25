@@ -8,10 +8,10 @@ It allows the user to create decks, cards, questions, answers and perform a quiz
 
 The following steps will help install and run FlashCards App on your local computer.
 
-git clone: https://github.com/Caxandre/FlashCards.git
+* git clone https://github.com/Caxandre/FlashCards.git
 cd myreads
 
-* install all project dependencies with `npm install` or `yarn install`
+* Install all project dependencies with `npm install` or `yarn install`
 
 * Start the development server with `npm start` or `yarn start`.
 
@@ -19,7 +19,7 @@ cd myreads
 
 ## Dependencies
 
-[Redux] (https://redux.js.org/)
-[React-Redux] (https://github.com/reduxjs/react-redux)
-[React-Navigation] (https://reactnavigation.org/)
-[Redux-Thunk] (https://github.com/reduxjs/redux-thunk)
+* [Redux] (https://redux.js.org/)
+* React-Redux] (https://github.com/reduxjs/react-redux)
+* [React-Navigation] (https://reactnavigation.org/)
+* [Redux-Thunk] (https://github.com/reduxjs/redux-thunk)
