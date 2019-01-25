@@ -2,7 +2,7 @@
 
 FlashCards is an application made with React Native during Udacity's Nanodegree React course.
 
-It allows the user to create decks, cards, questions and answers,and perform a quiz of each deck.
+It allows the user to create decks, cards, questions, answers and perform a quiz of each deck.
 
 ## Installation
 
