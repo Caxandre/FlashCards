@@ -24,7 +24,6 @@ class QuizScreen extends Component {
         const tally = correct ? this.state.tally + 1 : this.state.tally
         this.setState({ tally })
 
-        // Was this the final card of the quiz?
         if (qI + 1 < deck.questions.length) {
             this.setState(({ qI }) => ({
                 qI: qI + 1,
@@ -55,7 +54,6 @@ class QuizScreen extends Component {
                 <Quiz
                     deck={deck}
                     qI={qI}
-                    tally={tally}
                     question={deck.questions[qI].question}
                     answer={deck.questions[qI].answer}
                     onGrade={this.onGrade} />

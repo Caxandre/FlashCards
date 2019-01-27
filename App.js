@@ -5,7 +5,6 @@ import { Provider } from 'react-redux'
 import { createAppContainer, createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation'
 import middleware from './middleware'
 import reducers from './reducers'
-import { setLocalNotification } from './utils/helpers'
 import { Constants } from 'expo'
 import DeckScreen from './screens/deckScreen'
 import NewDeckScreen from './screens/newDeckScreen'
@@ -15,6 +14,7 @@ import QuizScreen from './screens/quizScreen'
 import QuizResultScreen from './screens/quizResultScreen'
 import { Lochmara, white, DarkSeaGreen } from './utils/colors'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
+import { setLocalNotification } from './utils/helpers'
 
 const store = createStore(reducers, middleware)
 

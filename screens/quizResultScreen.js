@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
 import { StackActions, NavigationActions } from 'react-navigation'
 import Result from '../components/result'
 import { PaleRose } from '../utils/colors'
+import { clearLocalNotification, setLocalNotification } from '../utils/helpers'
 
 class QuizResultScreen extends Component {
 
@@ -28,10 +29,14 @@ class QuizResultScreen extends Component {
       ]
     })
     this.props.navigation.dispatch(resetAction)
+    clearLocalNotification()
+      .then(setLocalNotification)
   }
 
   onBackToDecks = () => {
     this.props.navigation.navigate('Home')
+    clearLocalNotification()
+      .then(setLocalNotification)
   }
 
   render() {

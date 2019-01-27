@@ -1,25 +1,25 @@
 import { AsyncStorage } from 'react-native'
 import { Notifications, Permissions } from 'expo'
 
-const NOTIFICATION_KEY = 'Flashcards:notify'
+const NOTIFICATION_KEY = 'Flashcards:notifications'
 
-export function clearLocalNotifications() {
-  AsyncStorage.removeItem(NOTIFICATION_KEY)
-    .then(Notifications.cancelAllScheduledNotificationsAsync())
+export function clearLocalNotification() {
+  return AsyncStorage.removeItem(NOTIFICATION_KEY)
+    .then(Notifications.cancelAllScheduledNotificationsAsync)
 }
 
 function createNotification() {
   return {
-    title: `Hey! It\'s from Flashcards:`,
-    body: '🙇‍♂️ Don\'t forget to test your knowledge today!',
+    title: `Hey! It's from Flashcards:`,
+    body: '️Do not forget to test your knowledge today!',
     ios: {
-      sound: true
+      sound: true,
     },
     android: {
       sound: true,
-      priority: 'low',
+      priority: 'high',
       sticky: false,
-      vibrate: true
+      vibrate: true,
     }
   }
 }
@@ -27,23 +27,22 @@ function createNotification() {
 export function setLocalNotification() {
   AsyncStorage.getItem(NOTIFICATION_KEY)
     .then(JSON.parse)
-    .then(data => {
+    .then((data) => {
       if (data === null) {
         Permissions.askAsync(Permissions.NOTIFICATIONS)
           .then(({ status }) => {
             if (status === 'granted') {
               Notifications.cancelAllScheduledNotificationsAsync()
-
               let tomorrow = new Date()
               tomorrow.setDate(tomorrow.getDate() + 1)
-              tomorrow.setHours(10)
+              tomorrow.setHours(20)
               tomorrow.setMinutes(0)
 
               Notifications.scheduleLocalNotificationAsync(
                 createNotification(),
                 {
                   time: tomorrow,
-                  repeat: 'day'
+                  repeat: 'day',
                 }
               )
 

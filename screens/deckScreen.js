@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, ScrollView,AsyncStorage } from 'react-native'
 import Deck from '../components/deck'
 import { PaleRose } from '../utils/colors'
 import { requestDecks } from '../actions/deck'
@@ -9,7 +9,6 @@ import { requestDecks } from '../actions/deck'
 class DeckScreen extends Component {
 
     componentDidMount() {
-        // AsyncStorage.clear()
         this.props.dispatch(requestDecks())
     }
 

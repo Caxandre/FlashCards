@@ -6,7 +6,7 @@ import FlashCard from './FlashCard'
 
 
 
-export default function Quiz({ deck, qI, tally,
+export default function Quiz({ deck, qI,
     question,
     answer,
     onGrade,

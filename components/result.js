@@ -11,11 +11,11 @@ export default function Result({ deck, tally, media, onBackToDecks, onRetakeQuiz
                 {tally >= media
                     ? <View style={styles.result}>
                         <SimpleLineIcons name='trophy' size={80} color={OldGold} />
-                        <Text style={styles.resultText}>Congratulations!</Text>
+                        <Text style={styles.resultTitle}>Congratulations!</Text>
                     </View>
                     : <View style={styles.result}>
                         <Entypo name='emoji-sad' size={80} color={WineBerry} />
-                        <Text style={styles.resultText}>Sorry... Try again!</Text>
+                        <Text style={styles.resultTitle}>Sorry... Try again!</Text>
                     </View>
                 }
                 <Text style={styles.resultText}>Did you get {tally} from {deck.questions.length} questions.</Text>
@@ -46,12 +46,6 @@ const styles = StyleSheet.create({
         marginTop: 100,
         margin: 20,
     },
-    resultText: {
-        paddingTop: 20,
-        paddingBottom: 20,
-        fontSize: 20,
-        color: WineBerry
-    },
     optionArea: {
         flex: 1,
         marginTop: 90,
@@ -65,11 +59,17 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    resultText: {
+    resultTitle: {
         paddingTop: 20,
         paddingBottom: 20,
         fontSize: 20,
         fontWeight: '500',
         color: WineBerry,
+    },
+    resultText: {
+        paddingTop: 20,
+        paddingBottom: 20,
+        fontSize: 20,
+        color: WineBerry
     },
 })
